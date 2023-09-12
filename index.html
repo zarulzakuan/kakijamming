@@ -1,1 +1,252 @@
-Hello!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pedals Arranger</title>
+    <style>
+
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <section class="section">
+            <h1 class="title">Pedals Arranger</h1>
+            <h2 class="subtitle">
+                AI-driven effect pedals arrangement suggestor
+            </h2>
+            <div class=" field select-container " id="pedals-container">
+                <label class="label" for="pedals">Select one or more pedals that you have</label>
+                <div class="control">
+                    <div style="display: block;" class="select is-primary">
+                        <select name="pedals">
+                            <option disabled>Select one or more pedals that you have</option>
+                            <option disabled>Drive Pedals</option>
+                            <option value="Overdrive">Overdrive</option>
+                            <option value="Distortion">Distortion</option>
+                            <option value="Fuzz">Fuzz</option>
+                            <option disabled>Time-Based Effects</option>
+                            <option value="Delay">Delay</option>
+                            <option value="Reverb">Reverb</option>
+                            <option disabled>Modulation Effects</option>
+                            <option value="Chorus">Chorus</option>
+                            <option value="Flanger">Flanger</option>
+                            <option value="Phaser">Phaser</option>
+                            <option value="Tremolo">Tremolo</option>
+                            <option value="Wah-Wah">Wah-Wah</option>
+                            <option value="Vibrato">Vibrato</option>
+                            <option disabled>Pitch and Harmonizing</option>
+                            <option value="Octave">Octave</option>
+                            <option value="Harmonizer">Harmonizer</option>
+                            <option value="Pitch Shifter">Pitch Shifter</option>
+                            <option disabled>Dynamic and Utility</option>
+                            <option value="Compressor">Compressor</option>
+                            <option value="Boost">Boost</option>
+                            <option value="Volume">Volume</option>
+                            <option value="Noise Gate">Noise Gate</option>
+                            <option value="Tuner">Tuner</option>
+                            <option disabled>Multi-Effects and Other</option>
+                            <option value="Multi-Effects">Multi-Effects</option>
+                            <option value="Looper">Looper</option>
+                            <option value="EQ">EQ</option>
+                            <option value="Rotary Speaker Simulator">Rotary Speaker Simulator</option>
+                            <option value="Envelope Filter (Auto-Wah)">Envelope Filter (Auto-Wah)</option>
+                            <option value="Ring Modulator">Ring Modulator</option>
+                            <option value="Synth">Synth</option>
+                            <option value="Tape Echo">Tape Echo</option>
+                            <option value="Harmonist">Harmonist</option>
+                            <option value="Tone Bender">Tone Bender</option>
+                            <option value="Klon Centaur">Klon Centaur</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link is-small" onclick="addSelect('pedals-container')">Add Pedal</button>
+                </div>
+                <div class="control">
+                    <button class="button is-link is-light is-small" onclick="removeSelect('pedals-container')">Remove
+                        Pedal</button>
+                </div>
+            </div>
+            <div class=" field select-container " id="genres-container">
+                <label class="label" for="pedals">Select one or more genres that you play</label>
+                <div class="control">
+                    <div class="select is-primary" style="display: block;">
+                        <select name="genres">
+                            <option disabled>Select one or more genres that you play</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Blues">Blues</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Metal">Metal</option>
+                            <option value="Country">Country</option>
+                            <option value="Grunge">Grunge</option>
+                            <option value="Funk">Funk</option>
+                            <option value="Reggae">Reggae</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Classical">Classical</option>
+                            <option value="Hip-Hop">Hip-Hop</option>
+                            <option value="Electronic">Electronic</option>
+                            <option value="R&B">R&B</option>
+                            <option value="Punk">Punk</option>
+                            <option value="Alternative">Alternative</option>
+                            <option value="Experimental">Experimental</option>
+                            <option value="Folk">Folk</option>
+                            <option value="Indie">Indie</option>
+                            <option value="World">World</option>
+                            <option value="Gospel">Gospel</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link is-small" onclick="addSelect('genres-container')">Add Genre</button>
+                </div>
+                <div class="control">
+                    <button class="button is-link is-light is-small" onclick="removeSelect('genres-container')">Remove
+                        Genre</button>
+                </div>
+            </div>
+            <div class=" field select-container " id="equipment-container">
+                <label class="label" for="pedals">Select one or more instruments that you play</label>
+                <div class="control">
+                    <div class="select is-primary" style="display: block;">
+
+                        <select name="equipment">
+                            <option disabled>Select instrument that you play</option>
+                            <option disabled>--- Guitar ---</option>
+                            <option value="Single Coil Guitar">Single Coil Guitar</option>
+                            <option value="Humbucker Guitar">Humbucker Guitar</option>
+                            <option value="P-90 Guitar">P-90 Guitar</option>
+                            <option value="Mini Humbucker Guitar">Mini Humbucker Guitar</option>
+                            <option value="Lipstick Guitar">Lipstick Guitar</option>
+                            <option value="Filter'Tron Guitar">Filter'Tron Guitar</option>
+                            <option value="Wide Range Humbucker Guitar">Wide Range Humbucker Guitar</option>
+                            <option value="Lace Sensor Guitar">Lace Sensor Guitar</option>
+                            <option value="Active Guitar">Active Guitar</option>
+                            <option value="Piezo Guitar">Piezo Guitar</option>
+                            <option disabled>--- Bass ---</option>
+                            <option value="Precision Bass (P Bass)">Precision Bass (P Bass)</option>
+                            <option value="Jazz Bass (J Bass)">Jazz Bass (J Bass)</option>
+                            <option value="PJ Bass">PJ Bass</option>
+                            <option value="Music Man Bass">Music Man Bass</option>
+                            <option value="Thunderbird Bass">Thunderbird Bass</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link is-small" onclick="addSelect('equipment-container')">Add
+                        Instrument</button>
+                </div>
+                <div class="control">
+                    <button class="button is-link is-light is-small"
+                        onclick="removeSelect('equipment-container')">Remove
+                        Instrument</button>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Other Notes</label>
+                <div class="control">
+                    <textarea id="note" name="note" class="textarea"
+                        placeholder="I want to sound like Slash!"></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button submit is-primary" onclick="sendData()"> Submit </button>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div id="response"></div>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
+    <script>
+
+        function addSelect(containerId) {
+            const container = document.getElementById(containerId);
+            const selects = container.querySelectorAll('.select');
+
+            // Check if there are less than 10 selects in the container before adding a new one
+            if (selects.length < 10) {
+                const select = selects[0].cloneNode(true);
+                container.appendChild(select);
+            } else {
+                alert('You can only add up to 10 selects.');
+            }
+        }
+
+        function removeSelect(containerId) {
+            const container = document.getElementById(containerId);
+            const selects = container.querySelectorAll('.select');
+
+            // Check if there's at least one select to remove
+            if (selects.length > 1) {
+                const lastSelect = selects[selects.length - 1];
+                container.removeChild(lastSelect);
+            }
+        }
+
+        function sendData() {
+            // add class is-loading to the submit button
+            const submitButton = document.querySelector('.submit');
+            submitButton.classList.add('is-loading');
+            const data = {
+                pedals: [],
+                genres: [],
+                equipment: [],
+                note: document.getElementById('note').value
+            };
+
+            // Collect selected values from each select container
+            const selectContainers = document.querySelectorAll('.select-container');
+            selectContainers.forEach(container => {
+                const selects = container.querySelectorAll('select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const name = select.getAttribute('name');
+
+                    if (selectedValue) {
+                        data[name].push(selectedValue);
+                    }
+                });
+            });
+
+            // Send the data to the server using a POST request
+            $.ajax({
+                url: 'https://api-qfkhhvrdrq-uc.a.run.app',
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (response) {
+                    console.log('Data sent successfully:', response);
+                    document.getElementById("response").innerHTML = response;
+                    mermaid.init();
+                    submitButton.classList.remove('is-loading');
+                    // You can handle the response here
+                },
+                error: function (error) {
+                    console.error('Error sending data:', error);
+                    submitButton.classList.remove('is-loading');
+                    // Handle errors here
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
